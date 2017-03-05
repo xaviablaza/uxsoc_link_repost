@@ -1,9 +1,9 @@
 const request = require('request');
 
-var getLatestUrl = (appId, appSecret, callback) => {
+var getLatestUrl = (pageId, appId, appSecret, callback) => {
 
 	request({
-		url: `https://graph.facebook.com/v2.8/uxsoc/posts?fields=link&limit=1&access_token=${appId}|${appSecret}`,
+		url: `https://graph.facebook.com/v2.8/${pageId}/posts?fields=link&limit=1&access_token=${appId}|${appSecret}`,
 		json: true
 	}, (error, response, body) => {
 		if (error) {
