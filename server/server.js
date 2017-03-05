@@ -55,7 +55,7 @@ app.listen(port, () => {
     });
 
     // Schedule a job every 15 minutes
-    var j = scheduler.scheduleJob('*/15 * * * *', () => {
+    var j = scheduler.scheduleJob('*/5 * * * *', () => {
       uxsFbPage.getLatestUrl('uxsoc', APP_ID, APP_SECRET, (errorMsg, results) => {
         if (errorMsg) {
           console.log(errorMessage);
