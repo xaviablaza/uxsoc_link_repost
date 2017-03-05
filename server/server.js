@@ -20,6 +20,10 @@ app.get('/', () => {
 
 app.listen(3000, () => {
   console.log('Started on port 3000');
+  console.log(port);
+  console.log(APP_ID);
+  console.log(APP_SECRET);
+  console.log(UXSOC_CHAPMANU_TOKEN);
   try {
 
     // Get the latest URL posted by UXSoc (assumed already posted)
