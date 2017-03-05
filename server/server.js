@@ -14,6 +14,10 @@ const UXSOC_CHAPMANU_TOKEN = process.env.UXSOC_CHAPMANU_TOKEN;
 
 FB.setAccessToken(UXSOC_CHAPMANU_TOKEN);
 
+app.get('/', () => {
+  res.send("Hello, friend. I'm running just fine.");
+});
+
 app.listen(3000, () => {
   console.log('Started on port 3000');
   try {

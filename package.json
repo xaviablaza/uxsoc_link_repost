@@ -4,7 +4,8 @@
   "description": "Cron job using Node that reposts whatever that's on the UXSoc Facebook Page to a social media channel of your choice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
   },
   "repository": {
     "type": "git",
