@@ -1,0 +1,25 @@
+{
+  "name": "uxsoc_link_repost",
+  "version": "1.0.0",
+  "description": "Cron job using Node that reposts whatever that's on the UXSoc Facebook Page to a social media channel of your choice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xaviablaza1/uxsoc_link_repost.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xaviablaza1/uxsoc_link_repost/issues"
+  },
+  "homepage": "https://github.com/xaviablaza1/uxsoc_link_repost#readme",
+  "dependencies": {
+    "express": "^4.15.0",
+    "fb": "^1.1.1",
+    "node-schedule": "^1.2.0",
+    "request": "^2.80.0"
+  }
+}
