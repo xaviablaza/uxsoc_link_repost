@@ -18,12 +18,8 @@ app.get('/', () => {
   res.send("Hello, friend. I'm running just fine.");
 });
 
-app.listen(3000, () => {
-  console.log('Started on port 3000');
-  console.log(port);
-  console.log(APP_ID);
-  console.log(APP_SECRET);
-  console.log(UXSOC_CHAPMANU_TOKEN);
+app.listen(port, () => {
+  console.log(`Started on port ${port}`);
   try {
 
     // Get the latest URL posted by UXSoc (assumed already posted)
