@@ -22,8 +22,8 @@ app.listen(port, () => {
   try {
 
     // Get the latest URL posted by UXSoc and the latest URL posted by UXSocChapmanU
-    uxsFbPage.getLatestUrl('uxsocchapmanu', APP_ID, APP_SECRET, (errorMsg, results) => {
-      if (errorMsg) {
+    uxsFbPage.getLatestUrl('uxsocchapmanu', APP_ID, APP_SECRET, (errorMessage, results) => {
+      if (errorMessage) {
         console.log(errorMessage);
       } else {
         console.log(results);
@@ -42,10 +42,10 @@ app.listen(port, () => {
                     console.log(!res ? 'error occurred' : res.error);
                     return;
                   }
-                  console.log('Post Id: ' + res.id);
+                  console.log('[' + new Date().toLocaleString() + '] ' + 'Post Id: ' + res.id);
                 });
               } else {
-                console.log('Latest URL between both pages is still the same.');
+                console.log('[' + new Date().toLocaleString() + '] ' + 'Latest URL between both pages is still the same.');
               }
             }
           });
@@ -56,11 +56,11 @@ app.listen(port, () => {
 
     // Schedule a job every 15 minutes
     var j = scheduler.scheduleJob('*/5 * * * *', () => {
-      uxsFbPage.getLatestUrl('uxsoc', APP_ID, APP_SECRET, (errorMsg, results) => {
-        if (errorMsg) {
+      uxsFbPage.getLatestUrl('uxsoc', APP_ID, APP_SECRET, (errorMessage, results) => {
+        if (errorMessage) {
           console.log(errorMessage);
         } else {
-          console.log("Firing cron job");
+          console.log('[' + new Date().toLocaleString() + '] ' + 'Firing cron job');
           // If the latest url is not the same then post to the page (excluding gif or facebook.com because those are chapter specific shares)
           if (url !== results.link && !(results.link.endsWith('gif') || results.link.includes('facebook.com'))) {
             url = results.link;
@@ -69,10 +69,10 @@ app.listen(port, () => {
                 console.log(!res ? 'error occurred' : res.error);
                 return;
               }
-              console.log('Post Id: ' + res.id);
+              console.log('[' + new Date().toLocaleString() + '] ' + 'Post Id: ' + res.id);
             });
           } else {
-            console.log('Latest URL is still the same.');
+            console.log('[' + new Date().toLocaleString() + '] ' + 'Latest URL is still the same.');
           }
         }
       });
